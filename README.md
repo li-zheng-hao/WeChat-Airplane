@@ -1,2 +1,6 @@
 # 飞机大战项目
-  我的第一个项目，一些功能都还没有写完，代码也没有完善，还有一些小bug在里面.恩,就当做是练手吧.
+下面是运行之后的游戏截图  
+
+![image](http://github.com/li-zheng-hao/airplane/raw/master/3.png)
+![image](http://github.com/li-zheng-hao/airplane/raw/master/1.png)
+![image](http://github.com/li-zheng-hao/airplane/raw/master/2.png)
