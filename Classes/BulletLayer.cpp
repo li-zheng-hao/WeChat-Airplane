@@ -43,12 +43,12 @@ void BulletLayer::addBullet(float dt)
 	auto heroPlane = heroLayer->getChildByName("heroplane");
 
 	SimpleAudioEngine::getInstance()->playEffect("sound/newbullet.wav");
-	//�����ӵ�
+	//添加子弹
 	auto bullet = Sprite::createWithSpriteFrameName("bullet1.png");
 	bullet->setPosition(Vec2(heroPlane->getPositionX(),heroPlane->getPositionY()+50));
 	bulletVec.pushBack(bullet);
 	this->addChild(bullet);
-	//�ӵ�ִ���ƶ�Ч��
+	//子弹执行移动效果
 	auto curPoint = bullet->getPosition();
 	float speed = 3;
 	auto size = bullet->getContentSize();
@@ -58,8 +58,8 @@ void BulletLayer::addBullet(float dt)
 
 	auto seq = Sequence::create(moveAction, CCCallFunc::create(this, SEL_CallFunc(&Sprite::removeFromParent)), NULL);
 
-	bullet->runAction(seq);
-	//this->schedule(schedule_selector(BulletLayer::moveBullet));//��һ�����ö�ʱ���ķ�����������֡�ʵı䶯���䶯
+	//bullet->runAction(seq);
+	this->schedule(schedule_selector(BulletLayer::moveBullet));//这一步采用定时器的方法，会随着帧率的变动而变动
 
 }
 
